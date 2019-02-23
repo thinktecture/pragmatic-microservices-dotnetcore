@@ -1,0 +1,30 @@
+{
+  "name": "shipping-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "docker-build": "docker build -t shipping-service .",
+    "docker-run": "docker run shipping-service",
+    "run": "nodemon --exec ts-node app/app.ts",
+    "start": "tsc",
+    "build": "tsc",
+    "start-server": "node server.js"
+  },
+  "dependencies": {
+    "consul": "^0.34.1",
+    "easynodeq": "0.2.8",
+    "node-cleanup": "^2.1.2",
+    "uuid": "^3.3.2",
+    "restify": "^7.3.0",
+    "restify-cors-middleware": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.10.1",
+    "nodemon": "^1.18.9",
+    "ts-node": "^7.0.1",
+    "typescript": "^2.9.2"
+  }
+}
