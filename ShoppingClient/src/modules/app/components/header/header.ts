@@ -22,7 +22,12 @@ export class HeaderComponent {
     private _platform: PlatformService,
     private _security: OAuthService
   ) {
-    this.isLoggedIn = this._security.hasValidAccessToken();
+    this.isLoggedIn = _security.hasValidAccessToken();
+    this._security.events.subscribe(e => {
+      if (e.type === 'token_received') {
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   public logout(): void {
